@@ -1,6 +1,6 @@
 ---
 title: Routing
-slug: routing
+code: 200
 description: An intro to routing with Astro.
 category:
   - One
@@ -9,7 +9,7 @@ tags:
   - Astro
   - Jamstack
 pubDate: 2023-09-01
-cover: https://images.unsplash.com/photo-1501791187590-9ef2612ba1eb?w=1960&h=1102&auto=format&fit=crop&q=60&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8NzJ8fGJsYWNrfGVufDB8MHwwfHx8Mg%3D%3D
+cover: '../../assets/capy-media/Capy100.jpg'
 coverAlt: AstroVerse-Aliases
 author: VV
 ---
@@ -144,17 +144,17 @@ In the following example, a rest parameter (`[...slug]`) and the [`props`](/en/r
 export async function getStaticPaths() {
   const pages = [
     {
-      slug: undefined,
+      code: 200
       title: "Astro Store",
       text: "Welcome to the Astro store!",
     },
     {
-      slug: "products",
+      code: 200
       title: "Astro products",
       text: "We have lots of products for you",
     },
     {
-      slug: "products/astro-handbook",
+      code: 200
       title: "The ultimate Astro handbook",
       text: "If you want to learn Astro, you must read this book.",
     },
@@ -203,17 +203,17 @@ Because SSR pages can't use `getStaticPaths()`, they can't receive props. The [p
 ---
 const pages = [
   {
-    slug: undefined,
+    code: 200
     title: "Astro Store",
     text: "Welcome to the Astro store!",
   },
   {
-    slug: "products",
+    code: 200
     title: "Astro products",
     text: "We have lots of products for you",
   },
   {
-    slug: "products/astro-handbook",
+    code: 200
     title: "The ultimate Astro handbook",
     text: "If you want to learn Astro, you must read this book.",
   },

@@ -1,10 +1,11 @@
+src/assets
 # build output
 dist/
-
+.idea
 # generated types
 .astro/
 .vercel/
-
+scripts/__pycache__/
 # dependencies
 node_modules/
 

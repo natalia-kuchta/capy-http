@@ -1,6 +1,6 @@
 ---
 title: Eendpoint
-slug: endpoint
+code: 200
 description: Learn how to create endpoints that serve any kind of data
 category:
   - There
@@ -9,7 +9,7 @@ tags:
   - Astro
   - Jamstack
 pubDate: 2023-09-01
-cover: https://images.unsplash.com/photo-1526289034009-0240ddb68ce3?w=1960&h=1102&auto=format&fit=crop&q=60&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8NDV8fGJsYWNrfGVufDB8MHwwfHx8Mg%3D%3D
+cover: '../../assets/capy-media/Capy100.jpg'
 coverAlt: AstroVerse-Aliases
 author: VV
 ---

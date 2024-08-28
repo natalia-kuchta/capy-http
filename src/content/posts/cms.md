@@ -1,6 +1,6 @@
 ---
 title: Use a CMS with Astro
-slug: use-cms
+code: 200
 description: How to use a CMS to add content to Astro
 category:
   - Two
@@ -9,7 +9,7 @@ tags:
   - Find
   - SEO
 pubDate: 2023-09-01
-cover: https://images.unsplash.com/photo-1638184984605-af1f05249a56?w=1960&h=1102&auto=format&fit=crop&q=60&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8MzV8fGJsYWNrfGVufDB8MHwwfHx8Mg%3D%3D
+cover: '../../assets/capy-media/Capy100.jpg'
 coverAlt: AstroVerse-Aliases
 author: VV
 ---

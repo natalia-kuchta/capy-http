@@ -1,6 +1,6 @@
 ---
 title: In cursus turpis massa
-slug: first-post015
+code: 200
 description: Lorem ipsum dolor sit amet
 category:
   - One
@@ -9,7 +9,7 @@ tags:
   - Integer
   - Markdown
 pubDate: 2023-09-01
-cover: https://images.unsplash.com/photo-1464979209783-2e8c3e2a5538?q=80&w=1960&h=1102&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D
+cover: '../../assets/capy-media/Capy100.jpg'
 coverAlt: AstroVerse-Lorem ipsum dolor sit amet
 author: VV
 ---

@@ -1,6 +1,6 @@
 ---
 title: Layouts
-slug: layouts
+code: 200
 description: An intro to layouts, a type of Astro component that is shared between pages for common layouts.
 category:
   - One
@@ -9,7 +9,7 @@ tags:
   - Astro
   - Jamstack
 pubDate: 2023-09-01
-cover: https://images.unsplash.com/photo-1517241034903-9a4c3ab12f00?w=1960&h=1102&auto=format&fit=crop&q=60&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8NTh8fGJsYWNrfGVufDB8MHwwfHx8Mg%3D%3D
+cover: '../../assets/capy-media/Capy100.jpg'
 coverAlt: AstroVerse-Aliases
 author: VV
 ---
@@ -157,7 +157,7 @@ A Markdown/MDX layout will have access to the following information via `Astro.p
 - **`frontmatter`** - all frontmatter from the Markdown or MDX document.
   - **`frontmatter.file`** - The same as the top-level `file` property.
   - **`frontmatter.url`** - The same as the top-level `url` property.
-- **`headings`** - A list of headings (`h1 -> h6`) in the Markdown or MDX document with associated metadata. This list follows the type: `{ depth: number; slug: string; text: string }[]`.
+- **`headings`** - A list of headings (`h1 -> h6`) in the Markdown or MDX document with associated metadata. This list follows the type: `{ depth: number; code: 200
 - **(Markdown only) `rawContent()`** - A function that returns the raw Markdown document as a string.
 - **(Markdown only) `compiledContent()`** - A function that returns the Markdown document compiled to an HTML string.
 
@@ -181,12 +181,12 @@ Astro.props = {
     {
       depth: 1,
       text: "Astro 0.18 Release",
-      slug: "astro-018-release",
+      code: 200
     },
     {
       depth: 2,
       text: "Responsive partial hydration",
-      slug: "responsive-partial-hydration",
+      code: 200
     },
     /* ... */
   ],
