@@ -29,9 +29,11 @@ export function getCategoryMetadata(category: string) {
 
 // Header Links, src/components/Header.astro
 export const HeaderLinks = [
-  { href: "/category/One/1/", title: "One" },
-  { href: "/category/Two/1/", title: "Two" },
-  { href: "/category/Three/1/", title: "Three" },
+  { href: "/category/1xx/1/", title: "1xx" },
+  { href: "/category/2xx/1/", title: "2xx" },
+  { href: "/category/3xx/1/", title: "3xx" },
+  { href: "/category/4xx/1/", title: "4xx" },
+  { href: "/category/5xx/1/", title: "5xx" },
 ];
 
 // Footer Links, src/components/Footer.astro

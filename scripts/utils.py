@@ -70,9 +70,10 @@ codes = [
     (599, 'Network Connect Timeout Error'),
 ]
 
-base_dir = "../src/assets/capy-media"
+base_media_dir = "../src/assets/capy-media"
+base_content_dir = "../src/content/posts"
 
-files = [os.path.basename(file) for file in glob.glob(base_dir + "/*")]
+files = [os.path.basename(file) for file in glob.glob(base_media_dir + "/*")]
 
 
 def pattern_for_code(code):
@@ -80,4 +81,4 @@ def pattern_for_code(code):
 
 
 def get_size(file):
-    return os.path.getsize(base_dir + '/' + file)
+    return os.path.getsize(base_media_dir + '/' + file)
