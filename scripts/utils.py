@@ -1,6 +1,7 @@
 import re
 import glob
 import os
+from uu import Error
 
 codes = [
     (100, 'Continue'),
@@ -16,6 +17,7 @@ codes = [
     (206, 'Partial Content'),
     (207, 'Multi-Status'),
     (208, 'Already Reported'),
+    (214, 'Transformation Applied'),
     (226, 'IM Used'),
     (300, 'Multiple Choices'),
     (301, 'Moved Permanently'),
@@ -44,6 +46,7 @@ codes = [
     (416, 'Requested Range Not Satisfiable'),
     (417, 'Expectation Failed'),
     (418, 'I\'m a teapot'),
+    (420, 'Enhance Your Calm'),
     (421, 'Misdirected Request'),
     (422, 'Unprocessable Entity'),
     (423, 'Locked'),
@@ -53,8 +56,11 @@ codes = [
     (428, 'Precondition Required'),
     (429, 'Too Many Requests'),
     (431, 'Request Header Fields Too Large'),
-    (444, 'Connection Closed Without Response'),
+    (444, 'No Response'),
+    (450, 'Blocked By Windows Parental Controls'),
     (451, 'Unavailable For Legal Reasons'),
+    (497, 'HTTP Request Sent To HTTPS Port'),
+    (498, 'Token Expired/Invalid'),
     (499, 'Client Closed Request'),
     (500, 'Internal Server Error'),
     (501, 'Not Implemented'),
@@ -65,11 +71,18 @@ codes = [
     (506, 'Variant Also Negotiates'),
     (507, 'Insufficient Storage'),
     (508, 'Loop Detected'),
+    (509, 'Bandwidth Limit Exceeded'),
     (510, 'Not Extended'),
     (511, 'Network Authentication Required'),
+    (521, 'Web Server Is Down'),
+    (522, 'Connection Timed Out'),
+    (523, 'Origin Is Unreachable'),
+    (525, 'SSL Handshake Failed'),
+    (530, 'Site Frozen'),
     (599, 'Network Connect Timeout Error'),
 ]
 
+base_target_dir = "../public/capy"
 base_media_dir = "../src/assets/capy-media"
 base_content_dir = "../src/content/posts"
 
@@ -79,6 +92,47 @@ files = [os.path.basename(file) for file in glob.glob(base_media_dir + "/*")]
 def pattern_for_code(code):
     return re.compile(''.join(['^Capy', str(code[0]), '\.', '(jpg|jpeg|webp|webm|mp4|gif|avif|png)$']))
 
+def pattern_for_code_img_only(code):
+    return re.compile(''.join(['^Capy', str(code[0]), '\.', '(jpg|jpeg|webp|gif|avif|png)$']))
+
+def pattern_for_code_video_only(code):
+    return re.compile(''.join(['^Capy', str(code[0]), '\.', '(webm|mp4)$']))
+
 
 def get_size(file):
     return os.path.getsize(base_media_dir + '/' + file)
+
+import cv2
+import PIL
+from PIL import Image
+
+def get_resolution(file, ext):
+    if ext == '.mp4':
+        vid = cv2.VideoCapture(base_media_dir + '/' + file)
+        hgt = vid.get(cv2.CAP_PROP_FRAME_HEIGHT)
+        wid = vid.get(cv2.CAP_PROP_FRAME_WIDTH)
+        return wid, hgt
+
+    img = PIL.Image.open(base_media_dir + '/' + file)
+    wid, hgt = img.size
+    return wid, hgt
+
+def list_file_and_extensions_for_codes():
+    results = []
+
+    for (code) in codes:
+        pattern = pattern_for_code(code)
+        match = 0
+        file_name = ''
+        for file in files:
+            if pattern.match(file):
+                match += 1
+                file_name = file
+        if match != 1:
+            raise Exception(f"Wrong matches for {code[0]}")
+
+        extension = os.path.splitext(file_name)[1]
+
+        results.append((code[0], code[1], file_name, extension))
+
+    return results

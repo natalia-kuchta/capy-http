@@ -39,9 +39,13 @@ for (code) in utils.codes:
 
     print(colored(f"OK {code[0]} {match}", 'green') + f" [{utils.get_size(file_name)/1e6}]")    # break
 
-    print(render_file(code[0], code[1], file_name))
-    fh = open(utils.base_content_dir + '/' + str(code[0]) + '.md', 'w')
-    fh.write(render_file(code[0], code[1], file_name))
-
+    img_pattern = utils.pattern_for_code_img_only(code)
+    if img_pattern.match(file_name):
+        print(colored(f"rendered: {file_name}", 'blue'))
+        # print(render_file(code[0], code[1], file_name))
+        fh = open(utils.base_content_dir + '/' + str(code[0]) + '.md', 'w')
+        fh.write(render_file(code[0], code[1], file_name))
+    else:
+        print(colored(f"skipped: {file_name}", 'yellow'))
 
     print("")

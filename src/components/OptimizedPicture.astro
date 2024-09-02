@@ -19,18 +19,24 @@ const {
            (max-width: 720px) 700px, 
            (max-width: 1600px) 980px, 
            1960px`,
-  formats = ["avif"],
+  formats = ["avif", "webp"],
   fallbackFormat = "avif",
   class: className = "mx-auto w-full max-w-full rounded-lg"
 } = Astro.props;
 ---
 
-<Picture
-  src={src}
-  alt={alt}
-  widths={widths}
-  sizes={sizes}
-  formats={formats}
-  fallbackFormat={fallbackFormat}
-  class={className}
-/>
+<!--<Picture-->
+<!--  src={src}-->
+<!--  alt={alt}-->
+<!--  widths={widths}-->
+<!--  sizes={sizes}-->
+<!--  formats={formats}-->
+<!--  fallbackFormat={fallbackFormat}-->
+<!--  class={className}-->
+<!--/>-->
+
+{
+    src.src.endsWith('mp4') || src.src.endsWith('webm') ?
+    <video src={src.src} title={alt} class={className} autoplay playsinline loop muted/>    :
+    <img src={src.src} alt={alt} class={className}>
+}

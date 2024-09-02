@@ -2,28 +2,28 @@
 // You can import this data from anywhere in your site by using the `import` keyword.
 
 // Base Page Metadata, src/layouts/BaseLayout.astro
-export const BRAND_NAME = "AstroVerse";
-export const SITE_TITLE = "AstroVerse";
-export const SITE_DESCRIPTION = "An Astro Theme for Visual Storytelling";
+export const BRAND_NAME = "Capy HTTP";
+export const SITE_TITLE = "Capy HTTP";
+export const SITE_DESCRIPTION = "A collection of HTTP status codes illustrated by capybaras.";
 
 // Tags Page Metadata, src/pages/tags/index.astro
-export const Tags_TITLE = "AstroVerse - All Tags";
+export const Tags_TITLE = "Capy HTTP - All Tags";
 export const Tags_DESCRIPTION =
-  "AstroVerse - All tags and the count of articles related to each tag";
+    "Capy HTTP - All tags and the count of status codes related to each tag";
 
 // Tags Page Metadata, src/pages/tags/[tag]/[page].astro
 export function getTagMetadata(tag: string) {
   return {
-    title: `All articles on '${tag}' tag in AstroVerse`,
-    description: `Explore articles about ${tag} for different perspectives and in-depth analysis.`,
+    title: `All HTTP statuses tagged with '${tag}' in Capy HTTP`,
+    description: `Explore HTTP status codes related to ${tag} with capybaras for fun representation.`,
   };
 }
 
 // Category Page Metadata, src/pages/category/[category]/[page].astro
 export function getCategoryMetadata(category: string) {
   return {
-    title: `All articles in '${category}' category in AstroVerse`,
-    description: `Browse all articles under the ${category} category in AstroVerse`,
+    title: `All HTTP statuses in '${category}' category in Capy HTTP`,
+    description: `Browse all HTTP status codes under the ${category} category illustrated by capybaras`,
   };
 }
 
@@ -38,7 +38,7 @@ export const HeaderLinks = [
 
 // Footer Links, src/components/Footer.astro
 export const FooterLinks = [
-  { href: "/posts/why-astro/", title: "Astro" },
+  { href: "/posts/why-capy-http/", title: "Why Capy HTTP" },
   { href: "/posts/tailwind-typography/", title: "Tailwind" },
   { href: "/tags/", title: "Tags" },
 ];
@@ -47,12 +47,12 @@ export const FooterLinks = [
 export const SocialLinks = [
   { href: "/rss.xml", icon: "tabler:rss", label: "RSS" },
   {
-    href: "https://twitter.com/astrodotbuild",
+    href: "https://twitter.com/capyhttp",
     icon: "tabler:brand-twitter",
     label: "Twitter",
   },
   {
-    href: "https://github.com/isooosi",
+    href: "https://github.com/yourusername",
     icon: "tabler:brand-github",
     label: "GitHub",
   },

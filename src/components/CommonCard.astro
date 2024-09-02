@@ -20,7 +20,7 @@ const { post } = Astro.props;
         <span>{post.data.tags.join(" ")}</span>
         <FormattedDate date={post.data.pubDate} />
       </div>
-      <h3 class="mt-2 text-lg font-bold text-white">{post.data.title}</h3>
+      <h3 class="mt-2 text-lg font-bold text-white">{post.data.code} {post.data.title}</h3>
     </div>
   </a>
 </div>

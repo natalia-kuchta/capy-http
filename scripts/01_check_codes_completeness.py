@@ -8,6 +8,7 @@ for (code) in utils.codes:
     match = 0
     last_matching_file = ''
     for file in utils.files:
+        print("file", file)
         if pattern.match(file):
             match += 1
             print(f"{code[0]} - {file}")
@@ -17,7 +18,6 @@ for (code) in utils.codes:
     else:
         print(colored(f"NO {code[0]}", 'red'))
         lacking.append(str(code[0]))
-    # break
     print("")
 
 if lacking:
