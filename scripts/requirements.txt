@@ -1,3 +1,4 @@
 termcolor~=2.4.0
 opencv-python
 Pillow~=9.0.1
+openai
