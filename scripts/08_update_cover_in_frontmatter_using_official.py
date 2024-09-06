@@ -7,8 +7,8 @@ import frontmatter
 files = [os.path.basename(file) for file in glob.glob(utils.base_official_dir + "/*")]
 
 for file_name in files:
-    (basename, ext) = file.split('.')
-    code = int(basename.replace('Capy','')
+    (basename, ext) = file_name.split('.')
+    code = int(basename.replace('Capy',''))
 
 #     code = file.replace('.md', '')
 #     ext = post['cover'].split('.')[-1]
