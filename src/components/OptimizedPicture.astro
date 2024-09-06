@@ -36,7 +36,7 @@ const {
 <!--/>-->
 
 {
-    src.src.endsWith('mp4') || src.src.endsWith('webm') ?
-    <video src={src.src} title={alt} class={className} autoplay playsinline loop muted/>    :
-    <img src={src.src} alt={alt} class={className}>
+    new URL(src).pathname.endsWith('mp4') || new URL(src).pathname.endsWith('webm') ?
+    <video src={src} title={alt} class={className} autoplay playsinline loop muted/>    :
+    <img src={src} alt={alt} class={className}>
 }

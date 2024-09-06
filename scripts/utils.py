@@ -84,6 +84,7 @@ codes = [
 
 base_target_dir = "../public/capy"
 base_media_dir = "../src/assets/capy-media"
+base_official_dir = "../src/assets/capy-official"
 base_content_dir = "../src/content/posts"
 
 files = [os.path.basename(file) for file in glob.glob(base_media_dir + "/*")]
@@ -99,21 +100,30 @@ def pattern_for_code_video_only(code):
     return re.compile(''.join(['^Capy', str(code[0]), '\.', '(webm|mp4)$']))
 
 
-def get_size(file):
-    return os.path.getsize(base_media_dir + '/' + file)
+def get_size(file, base=base_media_dir):
+    return os.path.getsize(base + '/' + file)
+
+import shutil
+
+def publish(file):
+    src = base_media_dir + '/' + file
+    dst = base_official_dir + '/' + file
+    if os.path.exists(dst):
+        return
+    shutil.copyfile(src, dst)
 
 import cv2
 import PIL
 from PIL import Image
 
-def get_resolution(file, ext):
+def get_resolution(file, ext, base=base_media_dir):
     if ext == '.mp4':
-        vid = cv2.VideoCapture(base_media_dir + '/' + file)
+        vid = cv2.VideoCapture(base + '/' + file)
         hgt = vid.get(cv2.CAP_PROP_FRAME_HEIGHT)
         wid = vid.get(cv2.CAP_PROP_FRAME_WIDTH)
         return wid, hgt
 
-    img = PIL.Image.open(base_media_dir + '/' + file)
+    img = PIL.Image.open(base + '/' + file)
     wid, hgt = img.size
     return wid, hgt
 

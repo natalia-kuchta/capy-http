@@ -38,14 +38,14 @@ export const HeaderLinks = [
 
 // Footer Links, src/components/Footer.astro
 export const FooterLinks = [
-  { href: "/posts/why-capy-http/", title: "Why Capy HTTP" },
-  { href: "/posts/tailwind-typography/", title: "Tailwind" },
+  // { href: "/posts/why-capy-http/", title: "Why Capy HTTP" },
+  // { href: "/posts/tailwind-typography/", title: "Tailwind" },
   { href: "/tags/", title: "Tags" },
 ];
 
 // Social Links, src/components/Footer.astro
 export const SocialLinks = [
-  { href: "/rss.xml", icon: "tabler:rss", label: "RSS" },
+  // { href: "/rss.xml", icon: "tabler:rss", label: "RSS" },
   {
     href: "https://twitter.com/capyhttp",
     icon: "tabler:brand-twitter",
