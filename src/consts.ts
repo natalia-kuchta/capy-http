@@ -52,7 +52,7 @@ export const SocialLinks = [
     label: "Twitter",
   },
   {
-    href: "https://github.com/yourusername",
+    href: "https://github.com/natalia-kuchta",
     icon: "tabler:brand-github",
     label: "GitHub",
   },

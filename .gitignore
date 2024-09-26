@@ -1,5 +1,7 @@
 public/capy
-src/assets
+src/assets/capy-media
+src/assets/capy-official
+src/assets/capy-original
 # build output
 dist/
 .idea
@@ -23,3 +25,6 @@ pnpm-debug.log*
 
 # macOS-specific files
 .DS_Store
+public/pagefind
+
+src/assets/capy-official-backup-2024-09-09/

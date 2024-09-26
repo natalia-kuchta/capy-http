@@ -51,8 +51,6 @@ for [code, title, file_name, extension] in utils.list_file_and_extensions_for_co
 
     index += 1
 
-#     utils.publish(file_name)
-
 avg_w = sum_w / index
 avg_h = sum_h / index
 avg_s = sum_s / index

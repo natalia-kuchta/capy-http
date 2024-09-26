@@ -1,0 +1,11 @@
+---
+import '../assets/fancy-frame.css'
+
+const {title, code} = Astro.props
+---
+
+<div class="card w-full">
+    <slot/>
+
+    <h1 class="text-4xl text-center text-violet-700">{code} {title}</h1>
+</div>

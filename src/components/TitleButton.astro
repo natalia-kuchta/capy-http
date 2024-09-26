@@ -1,0 +1,13 @@
+---
+import '../assets/title-capy.css'
+import {SITE_TITLE} from "../consts";
+
+const title = SITE_TITLE.replace(' ',String.fromCharCode(160))
+---
+
+<a href="/">
+    <button class="button" data-text="Awesome">
+        <span class="actual-text">&nbsp;{title}&nbsp;</span>
+        <span aria-hidden="true" class="hover-text">&nbsp;{title}&nbsp;</span>
+    </button>
+</a>

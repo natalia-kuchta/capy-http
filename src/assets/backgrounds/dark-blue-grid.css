@@ -1,0 +1,58 @@
+@keyframes hero-gradient-animation {
+    0% {
+        --x-0: 14%;
+        --c-0: hsla(235.58823529411765, 100%, 34%, 1);
+        --s-start-0: 8.719997119443487%;
+        --s-end-0: 48.44259262873665%;
+        --y-0: 8%;
+    }
+
+    100% {
+        --x-0: 91%;
+        --c-0: hsla(246.17647058823525, 96%, 37%, 1);
+        --s-start-0: 10.100304948634562%;
+        --s-end-0: 37.18516324948311%;
+        --y-0: 82%;
+    }
+}
+
+@property --x-0 {
+    syntax: '<percentage>';
+    inherits: false;
+    initial-value: 14%
+}
+
+@property --c-0 {
+    syntax: '<color>';
+    inherits: false;
+    initial-value: hsla(235.58823529411765, 100%, 34%, 1)
+}
+
+@property --s-start-0 {
+    syntax: '<percentage>';
+    inherits: false;
+    initial-value: 8.719997119443487%
+}
+
+@property --s-end-0 {
+    syntax: '<percentage>';
+    inherits: false;
+    initial-value: 48.44259262873665%
+}
+
+@property --y-0 {
+    syntax: '<percentage>';
+    inherits: false;
+    initial-value: 8%
+}
+
+body {
+    --x-0: 14%;
+    --c-0: hsla(235.58823529411765, 100%, 34%, 1);
+    --y-0: 8%;
+;
+    background-color: hsla(217.00000000000006, 0%, 0%, 1);
+    background-image: radial-gradient(circle at var(--x-0) var(--y-0), var(--c-0) var(--s-start-0), transparent var(--s-end-0));
+    animation: hero-gradient-animation 15s linear infinite alternate;
+    background-blend-mode: normal;
+}

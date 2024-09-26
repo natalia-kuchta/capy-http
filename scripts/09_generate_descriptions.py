@@ -5,25 +5,28 @@ import utils
 import glob
 import os
 import frontmatter
+from termcolor import colored
 
 files = [os.path.basename(file) for file in glob.glob(utils.base_content_dir + "/*")]
 
+counter = 0
+
 for file in files:
-    print(file)
+#     print(file)
 
     # Read the file and load frontmatter
     file_path = os.path.join(utils.base_content_dir, file)
     with open(file_path, encoding="utf-8-sig") as f:
         post = frontmatter.load(f)
 
-    # Check if cover needs updating
-    if post['cover'][0] != '.':
-        continue
-
     # Update cover URL
     code = file.replace('.md', '')
-    ext = post['cover'].split('.')[-1]
     title = post['title']
+
+    # Check if cover needs updating
+    if post.content != '__DESCRIPTION__':
+        print(colored(f"SKIP {code}", "yellow"))
+        continue
 
     completion = client.chat.completions.create(
         model="gpt-4o-mini",
@@ -40,8 +43,9 @@ for file in files:
         ]
     )
 
-    post['content'] = completion.choices[0].message
-
+    post.content = completion.choices[0].message.content
+    post.content = post.content.removeprefix('```markdown')
+    post.content = post.content.removesuffix('```')
 
     # Safely dump the updated frontmatter
     updated_content = frontmatter.dumps(post)
@@ -50,5 +54,9 @@ for file in files:
     with open(file_path, 'w', encoding='utf-8-sig') as g:
         g.write(updated_content)
 
-    break
+    print(colored(f"DONE {code}", "green"))
 
+   # counter += 1
+
+    if counter > 4:
+        break

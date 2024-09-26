@@ -1,6 +1,7 @@
 import utils
 import glob
 import os
+import pillow_avif
 
 from termcolor import colored
 

@@ -4,6 +4,7 @@ import BaseLayout from "@layouts/BaseLayout.astro";
 import RelatedPostsCard from "@components/RelatedPostsCard.astro";
 import FormattedDate from "@components/FormattedDate.astro";
 import OptimizedCover from "@components/OptimizedPicture.astro";
+import FancyFrame from "../../components/FancyFrame.astro";
 
 export async function getStaticPaths() {
   const posts = await getCollection("posts");
@@ -20,17 +21,16 @@ const { Content } = await post.render();
 <BaseLayout title={post.data.title} description={post.data.description}>
   <main>
     <article class="prose mx-auto dark:prose-invert">
-        <div class="prose-h1 text-center">
-          <h1>{post.data.title}</h1>
-        </div>
         <div>
           {
             post.data.cover && (
-              <OptimizedCover src={post.data.cover} alt={post.data.coverAlt} />
+              <FancyFrame title={post.data.title} code={post.data.code}>
+                  <OptimizedCover src={post.data.cover} alt={post.data.coverAlt} />
+              </FancyFrame>
             )
           }
         </div>
-        <div>
+        <div class="mt-10">
           <Content />
         </div>
         <div class="prose-a:no-underline">
