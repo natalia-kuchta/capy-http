@@ -5,40 +5,119 @@ import Pagefind from "astro-pagefind/components/Search";
 // import FancySearch from "../components/FancySearch.astro";
 
 import '../assets/fancy-search.css'
+import '../assets/fancy-search-v2.css'
 ---
 
 <BaseLayout title={SEARCH_PAGE_TITLE} description={SEARCH_PAGE_DESCRIPTION}>
+
+
+        <!--<div id="fancy-search__search-container">-->
+        <!--    <div class="fancy-search__nebula"></div>-->
+        <!--    <div class="fancy-search__starfield"></div>-->
+
+        <!--    <div class="fancy-search__stardust"></div>-->
+
+        <!--    <div class="fancy-search__cosmic-ring"></div>-->
+
+        <!--    <div id="fancy-search__main">-->
+        <!--        <input class="input" name="text" type="text" placeholder="Explore the cosmos...">-->
+        <!--        <div id="fancy-search__input-mask"></div>-->
+        <!--        <div id="fancy-search__cosmic-glow"></div>-->
+        <!--        <div class="fancy-search__wormhole-border"></div>-->
+        <!--        <div id="fancy-search__wormhole-icon">-->
+        <!--            <svg stroke-linejoin="round" stroke-linecap="round" stroke-width="2" stroke="#a9c7ff" fill="none" height="24" width="24" viewBox="0 0 24 24">-->
+        <!--                <circle r="10" cy="12" cx="12"></circle>-->
+        <!--                <path d="M12 2a15.3 15.3 0 0 1 4 10 15.3 15.3 0 0 1-4 10 15.3 15.3 0 0 1-4-10 15.3 15.3 0 0 1 4-10z"></path>-->
+        <!--                <path d="M2 12h20"></path>-->
+        <!--            </svg>-->
+        <!--        </div>-->
+        <!--        <div id="fancy-search__search-icon">-->
+        <!--            <svg stroke-linejoin="round" stroke-linecap="round" stroke-width="2" stroke="url(#cosmic-search)" fill="none" height="24" width="24" viewBox="0 0 24 24">-->
+        <!--                <circle r="8" cy="11" cx="11"></circle>-->
+        <!--                <line y2="16.65" x2="16.65" y1="21" x1="21"></line>-->
+        <!--                <defs>-->
+        <!--                    <linearGradient gradientTransform="rotate(45)" id="cosmic-search">-->
+        <!--                        <stop stop-color="#a9c7ff" offset="0%"></stop>-->
+        <!--                        <stop stop-color="#6e8cff" offset="100%"></stop>-->
+        <!--                    </linearGradient>-->
+        <!--                </defs>-->
+        <!--            </svg>-->
+        <!--        </div>-->
+        <!--    </div>-->
+        <!--</div>-->
+
+
+
     <main>
         <section class="mx-auto w-full max-w-screen-2xl px-4 md:px-6">
             <div class="min-h-[500px] flex flex-col items-center justify-start pt-6 mt-32">
                 <a href="/"
                    class="mb-4 flex-none text-xl font-semibold text-neutral-900 hover:text-neutral-600 dark:text-neutral-400 dark:hover:text-neutral-200">{SITE_TITLE}</a>
-                <div class="w-full max-w-[500px] h-[34px] md:w-[400px] lg:w-[500px]">
+                <div class="w-full max-w-[500px] min-h-[34px] md:w-[400px] lg:w-[500px]">
+
+
                     <Pagefind
                             id="search"
                             className="pagefind-ui w-full h-full"
                             uiOptions={{showImages: false}}
                     />
-
+                    </div>
                     <!--<FancySearch/>-->
-                </div>
             </div>
         </section>
     </main>
 
     <script>
         window.addEventListener('DOMContentLoaded', () => {
-            new PagefindUI({element: 'input.search__input'});
+            // new PagefindUI({element: 'input.search__input'});
             const searchInputElement = document.querySelector('.pagefind-ui__search-input');
             if (!searchInputElement) throw new Error('.pagefind-ui__search-input not found');
             console.log(searchInputElement);
             searchInputElement.insertAdjacentHTML(
                 'beforebegin',
-                '<div class="search__glow"></div>' +
-                '<div class="search__darkBorderBg"></div>'.repeat(3) +
-                '<div class="search__white"></div>'+
-                '<div class="search__border"></div>'
-            )
+                `
+                    <div id="fancy-search__search-container">
+
+                <div class="fancy-search__nebula"></div>
+            <div class="fancy-search__starfield"></div>
+
+            <div class="fancy-search__stardust"></div>
+
+            <div class="fancy-search__cosmic-ring"></div>
+
+            <div id="fancy-search__main">
+<!--                <input class="input" name="text" type="text" placeholder="Explore the cosmos...">-->
+                <div id="fancy-search__input-mask"></div>
+                <div id="fancy-search__cosmic-glow"></div>
+                <div class="fancy-search__wormhole-border"></div>
+                <div id="fancy-search__wormhole-icon">
+                    <svg stroke-linejoin="round" stroke-linecap="round" stroke-width="2" stroke="#a9c7ff" fill="none" height="24" width="24" viewBox="0 0 24 24">
+                        <circle r="10" cy="12" cx="12"></circle>
+                        <path d="M12 2a15.3 15.3 0 0 1 4 10 15.3 15.3 0 0 1-4 10 15.3 15.3 0 0 1-4-10 15.3 15.3 0 0 1 4-10z"></path>
+                        <path d="M2 12h20"></path>
+                    </svg>
+                </div>
+                <div id="fancy-search__search-icon">
+                    <svg stroke-linejoin="round" stroke-linecap="round" stroke-width="2" stroke="url(#cosmic-search)" fill="none" height="24" width="24" viewBox="0 0 24 24">
+                        <circle r="8" cy="11" cx="11"></circle>
+                        <line y2="16.65" x2="16.65" y1="21" x1="21"></line>
+                        <defs>
+                            <linearGradient gradientTransform="rotate(45)" id="cosmic-search">
+                                <stop stop-color="#a9c7ff" offset="0%"></stop>
+                                <stop stop-color="#6e8cff" offset="100%"></stop>
+                            </linearGradient>
+                        </defs>
+                    </svg>
+                </div>
+            </div>
+            </div>
+`            );
+
+            const searchMainElement = document.querySelector('#fancy-search__main');
+            if (!searchMainElement) throw new Error('#fancy-search__main not found');
+            searchInputElement.classList.add('fancy-search__input')
+            searchInputElement.classList.remove('pagefind-ui__search-input');
+            searchMainElement.appendChild(searchInputElement)
             // searchInputElement.insertAdjacentHTML(
             //     'beforeend',
             //     '<div class="search__darkBorderBg"></div>'.repeat(3)
