@@ -47,9 +47,9 @@ export const FooterLinks = [
 export const SocialLinks = [
   // { href: "/rss.xml", icon: "tabler:rss", label: "RSS" },
   {
-    href: "https://twitter.com/capyhttp",
-    icon: "tabler:brand-twitter",
-    label: "Twitter",
+    href: "https://www.tiktok.com/@capy.http?_t=8qCikWtD5ta&_r=1",
+    icon: "tabler:brand-tiktok",
+    label: "Tiktok",
   },
   {
     href: "https://github.com/natalia-kuchta",

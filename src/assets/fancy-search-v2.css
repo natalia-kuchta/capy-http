@@ -57,7 +57,7 @@ button {
 }
 
 .fancy-search__input {
-    background-color: #fdf8ff;
+    background-color: #FDF8E1;
 }
 .dark .fancy-search__input {
     background-color: #05071b;
@@ -86,7 +86,7 @@ button {
     width: 190px;
     height: 20px;
     position: absolute;
-    background: linear-gradient(90deg, transparent, #ffffff);
+    background: linear-gradient(90deg, transparent,#FDF8E1;);
     top: 18px;
     left: 70px;
 }
