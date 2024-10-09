@@ -2,7 +2,6 @@
 import { getCollection } from "astro:content";
 import BaseLayout from "@layouts/BaseLayout.astro";
 import RelatedPostsCard from "@components/RelatedPostsCard.astro";
-import FormattedDate from "@components/FormattedDate.astro";
 import OptimizedCover from "@components/OptimizedPicture.astro";
 import FancyFrame from "../../components/FancyFrame.astro";
 
@@ -25,7 +24,7 @@ const { Content } = await post.render();
           {
             post.data.cover && (
               <FancyFrame title={post.data.title} code={post.data.code}>
-                  <OptimizedCover src={post.data.cover} alt={post.data.coverAlt} />
+                  <OptimizedCover src={post.data.cover} alt={post.data.coverAlt} class="not-prose mt-8" />
               </FancyFrame>
             )
           }
@@ -41,13 +40,6 @@ const { Content } = await post.render();
               </span>
             ))
           }
-        </div>
-        <div class="flex justify-between">
-          <small
-            >Publish on <FormattedDate date={post.data.pubDate} />，Update on <FormattedDate
-              date={new Date().toISOString()}
-            /></small
-          >
         </div>
     </article>
     <div class="mt-4">

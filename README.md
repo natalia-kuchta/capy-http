@@ -38,7 +38,7 @@ Ideal for bloggers and content creators seeking to make their stories stand out 
 
 ## 🎡 Live demo
 
-Experience [**AstroVerse**](https://verse-astro.vercel.app) in action.
+Experience [**AstroVerse**](https://capyhttp.com) in action.
 
 ## 🌆 Showcase
 

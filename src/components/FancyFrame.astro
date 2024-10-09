@@ -4,8 +4,30 @@ import '../assets/fancy-frame.css'
 const {title, code} = Astro.props
 ---
 
+
 <div class="card w-full">
     <slot/>
 
-    <h1 class="text-4xl text-center text-violet-700">{code} {title}</h1>
+    <h1 data-code={code} class="text-4xl text-center text-violet-700  max-h-8 not-prose font-extrabold">{code} {title}</h1>
 </div>
+
+<script is:inline define:vars={{ code }}>
+    const h1 = document.querySelector(`h1[data-code="${code}"]`);
+    function setMarginsForH1(h1) {
+        if(h1) {
+            const cs = window.getComputedStyle(h1);
+            console.log('cs', h1, cs);
+            console.log('h1.scrollHeight', h1.scrollHeight);
+            console.log('cs.lineHeight', cs.lineHeight);
+            const lines = Math.round(h1.scrollHeight / cs.lineHeight.replace(/px$/,''));
+            console.log('lines', lines);
+            if(lines > 1) {
+                h1.classList.add('mt-4'); h1.classList.add('mb-12');
+            } else {
+                h1.classList.add('mt-8'); h1.classList.add('mb-8');
+            }
+        }
+    }
+    window.addEventListener('resize', () => setMarginsForH1(h1));
+    setMarginsForH1(h1);
+</script>

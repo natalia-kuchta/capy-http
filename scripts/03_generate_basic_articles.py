@@ -17,7 +17,6 @@ description: {code_title}
 category: {code_first_digit}xx
 tags:
   - {code_first_digit}xx
-pubDate: 2014-06-01
 cover:  '../../assets/capy-media/{file_name}'
 coverAlt: {code_title}
 ---
