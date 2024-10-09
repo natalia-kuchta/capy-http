@@ -7,7 +7,7 @@ export async function GET(context) {
   let posts = await getCollection("posts");
 
   posts = posts
-    .sort((a, b) => b.data.code - a.data.code);
+    .sort((a, b) => a.data.code - b.data.code);
 
   return rss({
     title: SITE_TITLE,

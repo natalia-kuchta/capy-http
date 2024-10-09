@@ -15,7 +15,7 @@ export async function getStaticPaths() {
     const filteredPosts = allPosts.filter((post) =>
       post.data.category.includes(category),
     );
-    filteredPosts.sort((a, b) => b.data.code - a.data.code);
+    filteredPosts.sort((a, b) => a.data.code - b.data.code);
 
     const pageSize = 12;
     const totalPages = Math.ceil(filteredPosts.length / pageSize);
