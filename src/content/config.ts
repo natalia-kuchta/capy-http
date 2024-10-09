@@ -8,7 +8,6 @@ const posts = defineCollection({
     thumbnail: z.string(),
     code: z.number(),
 
-    pubDate: z.date(),
     description: z.string(),
 
     coverAlt: z.string(),
