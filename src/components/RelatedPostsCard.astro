@@ -16,7 +16,7 @@ async function getRelatedArticlesByCategory(): Promise<
         post.slug !== currentSlug,
     )
     .sort(
-      (a, b) => b.data.code - a.data.code,
+      (a, b) => a.data.code - b.data.code,
     )
     .slice(0, 3);
 }
