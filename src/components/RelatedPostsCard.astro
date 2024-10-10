@@ -2,7 +2,6 @@
 import { getCollection } from "astro:content";
 import type { CollectionEntry } from "astro:content";
 import OptimizedCover from "@components/OptimizedPicture.astro";
-import FormattedDate from "@components/FormattedDate.astro";
 
 const { currentCategory, currentSlug } = Astro.props;
 
@@ -17,8 +16,7 @@ async function getRelatedArticlesByCategory(): Promise<
         post.slug !== currentSlug,
     )
     .sort(
-      (a, b) =>
-        new Date(b.data.pubDate).valueOf() - new Date(a.data.pubDate).valueOf(),
+      (a, b) => a.data.code - b.data.code,
     )
     .slice(0, 3);
 }
@@ -35,7 +33,6 @@ const relatedPosts = await getRelatedArticlesByCategory();
           <div class="absolute bottom-0 end-0 start-0 bg-gradient-to-t p-4 md:p-5">
             <div class="mt-16 flex items-center gap-4 text-xs text-white">
               <span>{post.data.tags.join(" ")}</span>
-              <FormattedDate date={post.data.pubDate} />
             </div>
             <h2 class="mt-2 text-lg font-bold text-white">{post.data.title}</h2>
           </div>

@@ -6,10 +6,7 @@ import Pagination from "@components/Pagination.astro";
 import { SITE_TITLE, SITE_DESCRIPTION } from "@consts";
 
 const allPosts = await getCollection("posts");
-allPosts.sort(
-  (a, b) =>
-    new Date(b.data.pubDate).valueOf() - new Date(a.data.pubDate).valueOf(),
-);
+allPosts.sort((a, b) => a.data.code - b.data.code);
 
 const postsPerPage = 200;
 const firstPagePosts = allPosts.slice(0, postsPerPage);
