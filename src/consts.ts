@@ -47,7 +47,7 @@ export const FooterLinks = [
 export const SocialLinks = [
   // { href: "/rss.xml", icon: "tabler:rss", label: "RSS" },
   {
-    href: "https://www.tiktok.com/@capy.http?_t=8qCikWtD5ta&_r=1",
+    href: "https://www.tiktok.com/@capy.http",
     icon: "tabler:brand-tiktok",
     label: "Tiktok",
   },
